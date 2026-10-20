@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="form.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario</title>
@@ -17,13 +16,15 @@
         <input type="text" name="CPF" id="cpf" required placeholder="Preencha seu CPF completo">
         <br>
         <label for="email">email:</label>
-        <input type="text" name="EMAIL" id="email" required placeholder="Preencha seu email completo">
+        <input type="email" name="EMAIL" id="email" required placeholder="Preencha seu email completo">
         <br>
         <label for="senha">senha:</label>
-        <input type="text" name="SENHA" id="senha" required placeholder="coloque a senha">
+        <input type="password" name="SENHA" id="senha" required placeholder="coloque a senha">
         <br>
         <br>
-        <input type="submit">
+        <label for="bio">Digite sua bio:</label>
+        <textarea name="bio" id="bio"></textarea>
+        <button type="submit">Cadastrar</button>
     </form>
 </body>
 </html>
