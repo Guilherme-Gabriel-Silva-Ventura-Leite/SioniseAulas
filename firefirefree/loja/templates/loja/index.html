@@ -1,0 +1,343 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arsenal FF: loja de armas, skins e ofertas para Free Fire.">
+  <title>Arsenal FF | Loja oficial</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'loja/css/estilo.css' %}">
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a class="marca" href="{% url 'home' %}" aria-label="Arsenal FF, página inicial">
+        <svg class="marca__simbolo" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#1E5BFF"/>
+          <circle cx="24" cy="24" r="12" fill="none" stroke="#ffffff" stroke-width="3"/>
+          <path d="M24 4v10M24 34v10M4 24h10M34 24h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="24" cy="24" r="3" fill="#FF9F1C"/>
+        </svg>
+        <span class="marca__nome">Arsenal FF</span>
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li><a href="#armas">Armas</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#ajuda">Ajuda</a></li>
+        </ul>
+        <span class="menu__divisor" aria-hidden="true"></span>
+        <a class="botao botao--azul" href="{% url 'cadastro' %}">Criar conta</a>
+        <a class="menu__entrar" href="{% url 'login' %}">Entrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__conteudo">
+        <div class="hero__texto">
+          <span class="eyebrow">Loja oficial · Free Fire</span>
+          <h1 class="hero__titulo">Armas para vencer a partida.</h1>
+          <hr class="hero__linha">
+          <p class="hero__descricao">
+            Compare dano, alcance, cadência e preço em uma loja feita para jogadores que querem performance e velocidade na hora de comprar.
+          </p>
+
+          <div class="hero__acoes">
+            <a class="botao botao--laranja" href="#ofertas">Ver ofertas</a>
+            <a class="botao botao--secundario" href="#armas">Catálogo</a>
+          </div>
+
+          <ul class="hero__lista" aria-label="Estatísticas da loja">
+            <li><strong>2.4k+</strong><span>jogadores</span></li>
+            <li><strong>3 min</strong><span>entrega</span></li>
+            <li><strong>4.9/5</strong><span>avaliação</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__arte" aria-label="Card de arma em destaque">
+          <svg class="mira" viewBox="0 0 400 400" aria-hidden="true">
+            <g class="mira__giro">
+              <circle cx="200" cy="200" r="190" fill="none" stroke="#1E5BFF" stroke-width="2" stroke-dasharray="6 14"/>
+            </g>
+            <circle cx="200" cy="200" r="140" fill="none" stroke="#1E5BFF" stroke-opacity=".55" stroke-width="2"/>
+            <circle cx="200" cy="200" r="90" fill="none" stroke="#1E5BFF" stroke-opacity=".35" stroke-width="2"/>
+            <path d="M200 0v70M200 330v70M0 200h70M330 200h70" stroke="#1E5BFF" stroke-opacity=".7" stroke-width="2"/>
+          </svg>
+
+          <article class="arma" aria-label="Arma em destaque">
+            <header class="arma__topo">
+              <h2 class="arma__nome">M4A1</h2>
+              <span class="arma__selo">Oferta do dia</span>
+            </header>
+
+            <svg class="arma__imagem" viewBox="0 0 360 120" role="img" aria-label="Silhueta de arma M4A1">
+              <polygon points="70,48 20,56 20,88 38,88 70,72" fill="#94A3B8"/>
+              <rect x="70" y="46" width="150" height="26" rx="3" fill="#CBD5E1"/>
+              <rect x="70" y="58" width="150" height="4" fill="#FF9F1C"/>
+              <rect x="220" y="48" width="64" height="16" fill="#94A3B8"/>
+              <rect x="284" y="52" width="48" height="8" fill="#CBD5E1"/>
+              <rect x="332" y="49" width="14" height="14" fill="#64748B"/>
+              <rect x="128" y="38" width="46" height="8" rx="2" fill="#64748B"/>
+              <rect x="276" y="40" width="6" height="8" fill="#64748B"/>
+              <polygon points="118,72 142,72 134,104 112,104" fill="#94A3B8"/>
+              <polygon points="160,72 188,72 194,108 170,108" fill="#64748B"/>
+            </svg>
+
+            <dl class="arma__dados">
+              <div class="dado"><dt>Dano</dt><dd><span class="barra" style="--valor: 42%"></span></dd></div>
+              <div class="dado"><dt>Alcance</dt><dd><span class="barra" style="--valor: 68%"></span></dd></div>
+              <div class="dado"><dt>Cadência</dt><dd><span class="barra" style="--valor: 55%"></span></dd></div>
+            </dl>
+
+            <footer class="arma__rodape">
+              <p class="preco">
+                <svg class="preco__icone" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12,2 21,9 12,22 3,9" fill="#38BDF8"/>
+                  <polygon points="12,2 16,9 12,22 8,9" fill="#ffffff" fill-opacity=".35"/>
+                </svg>
+                <span>450</span>
+              </p>
+              <a class="botao botao--laranja botao--pequeno" href="{% url 'produto' %}">Comprar</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-strip">
+      <div class="container featured-strip__content">
+        <div class="featured-strip__item">
+          <span class="featured-strip__label">Drop de hoje</span>
+          <strong>Viper X</strong>
+        </div>
+        <div class="featured-strip__item">
+          <span class="featured-strip__label">Taxa de entrega</span>
+          <strong>3 minutos</strong>
+        </div>
+        <div class="featured-strip__item">
+          <span class="featured-strip__label">Clientes</span>
+          <strong>+2.4 mil</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Principais números da loja">
+      <div class="container stats__grid">
+        <div class="stats__item">
+          <span class="stats__numero">1.2k</span>
+          <span class="stats__texto">itens em estoque</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__numero">99.9%</span>
+          <span class="stats__texto">segurança</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__numero">24/7</span>
+          <span class="stats__texto">suporte</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__numero">+700</span>
+          <span class="stats__texto">avaliações positivas</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogo" id="armas">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="eyebrow eyebrow--dark">Populares</span>
+            <h2>Melhores armas do momento</h2>
+          </div>
+          <a class="link" href="{% url 'produto' %}">Ver tudo</a>
+        </div>
+
+        <div class="cards">
+          <article class="produto">
+            <span class="produto__tag">Top damage</span>
+            <div class="produto__imagem produto__imagem--azul" aria-hidden="true"></div>
+            <h3>AKM</h3>
+            <p>Rifle de assalto com dano pesado para confrontos médios e corpo a corpo.</p>
+            <div class="produto__rodape">
+              <strong>R$ 320</strong>
+              <a class="botao-produto" href="{% url 'produto' %}">Comprar</a>
+            </div>
+          </article>
+
+          <article class="produto">
+            <span class="produto__tag">Alta cadência</span>
+            <div class="produto__imagem produto__imagem--laranja" aria-hidden="true"></div>
+            <h3>XM8</h3>
+            <p>Rifle versátil com disparos rápidos e boa estabilidade em combates próximos.</p>
+            <div class="produto__rodape">
+              <strong>R$ 280</strong>
+              <a class="botao-produto" href="{% url 'produto' %}">Comprar</a>
+            </div>
+          </article>
+
+          <article class="produto">
+            <span class="produto__tag">Longo alcance</span>
+            <div class="produto__imagem produto__imagem--cinza" aria-hidden="true"></div>
+            <h3>M1887</h3>
+            <p>Escopeta letal com alto dano em uma única rajada para distâncias curtas.</p>
+            <div class="produto__rodape">
+              <strong>R$ 410</strong>
+              <a class="botao-produto" href="{% url 'produto' %}">Comprar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="diferenciais" id="diferenciais">
+      <div class="container">
+        <div class="secao__cabecalho secao__cabecalho--center">
+          <div>
+            <span class="eyebrow eyebrow--dark">Por que escolher</span>
+            <h2>Entrega, segurança e qualidade em um só lugar</h2>
+          </div>
+        </div>
+
+        <div class="diferenciais__grid">
+          <article class="beneficio">
+            <div class="beneficio__icone">⚡</div>
+            <h3>Entrega rápida</h3>
+            <p>Seu item é liberado em minutos, com processo simples e transparente.</p>
+          </article>
+          <article class="beneficio">
+            <div class="beneficio__icone">🛡️</div>
+            <h3>Pagamento seguro</h3>
+            <p>Transações com proteção, suporte e confirmação imediata.</p>
+          </article>
+          <article class="beneficio">
+            <div class="beneficio__icone">🎯</div>
+            <h3>Comparação real</h3>
+            <p>Veja desempenho, custo e utilidade antes de comprar.</p>
+          </article>
+          <article class="beneficio">
+            <div class="beneficio__icone">💬</div>
+            <h3>Suporte humano</h3>
+            <p>Equipe pronta para responder dúvidas e orientar sua escolha.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparativo" id="ofertas">
+      <div class="container comparativo__wrap">
+        <div class="comparativo__texto">
+          <span class="eyebrow eyebrow--dark">Comparativo</span>
+          <h2>Veja a melhor arma para cada estilo de jogo.</h2>
+          <p>
+            Entenda melhor o impacto de cada categoria antes de investir. O Arsenal FF mostra o que importa na prática: dano, alcance e cadência.
+          </p>
+          <ul>
+            <li>Armas ofensivas para foco em dano.</li>
+            <li>Opções equilibradas para partida longa.</li>
+            <li>Escolhas precisas para suporte e controle.</li>
+          </ul>
+        </div>
+
+        <div class="comparativo__tabela-wrapper">
+          <table class="comparativo__tabela">
+            <thead>
+              <tr>
+                <th>Arma</th>
+                <th>Dano</th>
+                <th>Alcance</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>M4A1</td>
+                <td>82%</td>
+                <td>76%</td>
+                <td>450</td>
+              </tr>
+              <tr>
+                <td>XM8</td>
+                <td>75%</td>
+                <td>82%</td>
+                <td>280</td>
+              </tr>
+              <tr>
+                <td>AKM</td>
+                <td>88%</td>
+                <td>70%</td>
+                <td>320</td>
+              </tr>
+              <tr>
+                <td>M1887</td>
+                <td>94%</td>
+                <td>35%</td>
+                <td>410</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="gameplay">
+      <div class="container">
+        <div class="secao__cabecalho secao__cabecalho--center">
+          <div>
+            <span class="eyebrow eyebrow--dark">Modo de jogo</span>
+            <h2>Prepare seu loadout para qualquer cenário</h2>
+          </div>
+        </div>
+
+        <div class="gameplay__grid">
+          <article class="modo-card">
+            <div class="modo-card__icon">🎯</div>
+            <h3>Escolha precisa</h3>
+            <p>Armas com melhor estabilidade para partidas de precisão e foco em alcance.</p>
+          </article>
+
+          <article class="modo-card">
+            <div class="modo-card__icon">⚡</div>
+            <h3>Pressão total</h3>
+            <p>Cadência alta, rotação rápida e performance para ganhar espaço no mapa.</p>
+          </article>
+
+          <article class="modo-card">
+            <div class="modo-card__icon">🧠</div>
+            <h3>Estratégia</h3>
+            <p>Equipamentos balanceados para quem valoriza controle, dano e sobrevivência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="ajuda">
+      <div class="container cta__box">
+        <div>
+          <span class="eyebrow">Sua melhor escolha está aqui</span>
+          <h2>Compre com confiança e avance na partida.</h2>
+        </div>
+        <a class="botao botao--laranja" href="{% url 'cadastro' %}">Comprar agora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <p>© 2026 Arsenal FF</p>
+      <nav aria-label="Links do rodapé">
+        <a href="{% url 'home' %}">Termos</a>
+        <a href="{% url 'login' %}">Privacidade</a>
+        <a href="{% url 'cadastro' %}">Contato</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

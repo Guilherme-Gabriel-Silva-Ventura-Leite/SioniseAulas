@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo produto | Arsenal FF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'loja/css/estilo.css' %}">
+</head>
+<body class="page-auth">
+  <div class="auth-shell auth-shell--wide">
+    <div class="auth-card auth-card--product">
+      <div class="auth-card__visual">
+        <span class="eyebrow">Marketplace</span>
+        <h1>Adicione uma nova arma ao catálogo.</h1>
+        <p>Cadastre itens com preço, categoria e destaque para fortalecer sua loja.</p>
+      </div>
+
+      <form class="auth-form auth-form--wide" method="post">
+        {% csrf_token %}
+        <div class="form-header">
+          <span class="eyebrow eyebrow--dark">Produto</span>
+          <h2>Novo item</h2>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Nome do item</span>
+            <input type="text" name="nome" placeholder="Ex: M4A1" required>
+          </label>
+          <label>
+            <span>Categoria</span>
+            <input type="text" name="categoria" placeholder="Ex: Assault Rifle" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Preço</span>
+            <input type="number" name="preco" placeholder="450" min="0" required>
+          </label>
+          <label>
+            <span>Desconto</span>
+            <input type="number" name="desconto" placeholder="10" min="0" max="100">
+          </label>
+        </div>
+
+        <label>
+          <span>Descrição</span>
+          <textarea name="descricao" rows="4" placeholder="Descreva o item, estilo de uso e diferencial..."></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="botao botao--laranja" type="submit">Salvar produto</button>
+          <a class="link" href="{% url 'home' %}">Voltar para loja</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

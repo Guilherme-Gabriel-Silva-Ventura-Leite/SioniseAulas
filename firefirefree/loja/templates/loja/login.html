@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar | Arsenal FF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'loja/css/estilo.css' %}">
+</head>
+<body class="page-auth">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-card__visual">
+        <span class="eyebrow">Arsenal FF</span>
+        <h1>Entre e continue dominando.</h1>
+        <p>Seu arsenal começa com uma conta segura e uma experiência premium.</p>
+      </div>
+
+      <form class="auth-form" method="post">
+        {% csrf_token %}
+        <div class="form-header">
+          <span class="eyebrow eyebrow--dark">Login</span>
+          <h2>Bem-vindo de volta</h2>
+        </div>
+
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="seu@email.com" required>
+        </label>
+
+        <label>
+          <span>Senha</span>
+          <input type="password" name="password" placeholder="••••••••" required>
+        </label>
+
+        <div class="form-actions">
+          <button class="botao botao--laranja" type="submit">Entrar</button>
+          <a class="link" href="{% url 'cadastro' %}">Criar conta</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

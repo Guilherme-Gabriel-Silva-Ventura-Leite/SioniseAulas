@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta | Arsenal FF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'loja/css/estilo.css' %}">
+</head>
+<body class="page-auth">
+  <div class="auth-shell">
+    <div class="auth-card auth-card--form">
+      <div class="auth-card__visual">
+        <span class="eyebrow">New season</span>
+        <h1>Construa seu perfil e entre no jogo.</h1>
+        <p>Crie sua conta para acompanhar promoções, ofertas exclusivas e equipamentos premium.</p>
+      </div>
+
+      <form class="auth-form" method="post">
+        {% csrf_token %}
+        <div class="form-header">
+          <span class="eyebrow eyebrow--dark">Cadastro</span>
+          <h2>Criar conta</h2>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Nome</span>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </label>
+          <label>
+            <span>Nickname</span>
+            <input type="text" name="nickname" placeholder="Seu nick" required>
+          </label>
+        </div>
+
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="seu@email.com" required>
+        </label>
+
+        <label>
+          <span>Senha</span>
+          <input type="password" name="password" placeholder="Crie uma senha" required>
+        </label>
+
+        <div class="form-actions">
+          <button class="botao botao--laranja" type="submit">Cadastrar</button>
+          <a class="link" href="{% url 'login' %}">Já tenho conta</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

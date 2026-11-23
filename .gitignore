@@ -1,0 +1,17 @@
+# Ambientes Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Banco local
+*.sqlite3
+
+# Django
+media/
+staticfiles/
+
+# Ambiente e IDE
+.env
+.env.*
+.vscode/
